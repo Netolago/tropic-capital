@@ -218,19 +218,34 @@ function Nav() {
       transition: "all 0.4s ease",
     }}>
       <div style={{ maxWidth: 1400, margin: "0 auto", padding: isMobile ? "16px 20px" : "22px 48px", display: "flex", alignItems: "center", gap: isMobile ? 12 : (isTablet ? 24 : 48) }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
-          <div style={{ width: 28, height: 28 }}>
-            <svg viewBox="0 0 28 28" style={{ width: "100%", height: "100%" }}>
-              <circle cx="14" cy="14" r="12" fill="none" stroke={C.gold} strokeWidth="1"/>
-              <ellipse cx="14" cy="14" rx="5" ry="12" fill="none" stroke={C.gold} strokeWidth="0.8"/>
-              <path d="M2 14h24" stroke={C.gold} strokeWidth="0.8"/>
-              <circle cx="14" cy="14" r="2" fill={C.gold}/>
+        <a href="#home" aria-label="Tropic Capital — Home" style={{ display: "flex", alignItems: "center", flexShrink: 0, cursor: "pointer", textDecoration: "none" }}>
+          <div style={{ width: isMobile ? 54 : 68, height: isMobile ? 54 : 68, flexShrink: 0, transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "rotate(8deg)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "rotate(0deg)"; }}>
+            <svg viewBox="0 0 60 60" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+              <defs>
+                <radialGradient id="logo-glow" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0%"  stopColor="#d4b170" stopOpacity="0.35"/>
+                  <stop offset="100%" stopColor="#d4b170" stopOpacity="0"/>
+                </radialGradient>
+              </defs>
+              {/* Inner glow */}
+              <circle cx="30" cy="30" r="14" fill="url(#logo-glow)"/>
+              {/* Globe sphere */}
+              <circle cx="30" cy="30" r="14" fill="none" stroke={C.gold} strokeWidth="1"/>
+              {/* Meridian + equator */}
+              <ellipse cx="30" cy="30" rx="6" ry="14" fill="none" stroke={C.gold} strokeWidth="0.7"/>
+              <line x1="16" y1="30" x2="44" y2="30" stroke={C.gold} strokeWidth="0.7"/>
+              {/* Crossing orbits */}
+              <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke={C.gold} strokeWidth="0.5" opacity="0.7" transform="rotate(-25 30 30)"/>
+              <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke={C.gold} strokeWidth="0.5" opacity="0.7" transform="rotate(25 30 30)"/>
+              {/* Orbiting dots */}
+              <circle cx="51" cy="34" r="1.6" fill={C.gold}/>
+              <circle cx="9"  cy="26" r="1.2" fill={C.gold} opacity="0.85"/>
+              <circle cx="33" cy="6"  r="1.1" fill="#ffffff" opacity="0.9"/>
             </svg>
           </div>
-          <div style={{ ...serif, fontSize: isMobile ? 15 : 17, fontWeight: 500, letterSpacing: "0.01em" }}>
-            Tropic <span style={{ color: C.gold, fontStyle: "italic" }}>Capital</span>
-          </div>
-        </div>
+        </a>
         {!isMobile && (
           <div style={{ flex: 1, display: "flex", gap: isTablet ? 20 : 40, justifyContent: "center", ...mono, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
             {links.map((l) => {
