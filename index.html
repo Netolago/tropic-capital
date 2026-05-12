@@ -219,7 +219,7 @@ function Nav() {
     }}>
       <div style={{ maxWidth: 1400, margin: "0 auto", padding: isMobile ? "16px 20px" : "22px 48px", display: "flex", alignItems: "center", gap: isMobile ? 12 : (isTablet ? 24 : 48) }}>
         <a href="#home" aria-label="Tropic Capital — Home" style={{ display: "flex", alignItems: "center", flexShrink: 0, cursor: "pointer", textDecoration: "none" }}>
-          <div style={{ width: isMobile ? 54 : 68, height: isMobile ? 54 : 68, flexShrink: 0, transition: "transform 0.3s ease" }}
+          <div style={{ width: isMobile ? 76 : 100, height: isMobile ? 76 : 100, flexShrink: 0, transition: "transform 0.3s ease" }}
             onMouseEnter={(e) => { e.currentTarget.style.transform = "rotate(8deg)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = "rotate(0deg)"; }}>
             <svg viewBox="0 0 60 60" style={{ width: "100%", height: "100%", overflow: "visible" }}>
@@ -1118,7 +1118,7 @@ function Footer() {
         </div>
         <div style={{ borderTop: `1px solid ${C.lineSoft}`, paddingTop: 24, fontSize: 11, lineHeight: 1.75, color: C.textMute, fontWeight: 300, fontFamily: "'Inter', sans-serif", letterSpacing: 0, maxWidth: 1100 }}>
           <strong style={{ color: C.textDim, fontWeight: 500, textTransform: "uppercase", fontSize: 10, letterSpacing: "0.18em", display: "block", marginBottom: 10, ...mono }}>Regulatory Disclaimer</strong>
-          Tropic Capital is a private credit advisory firm. The information presented on this website is for informational purposes only and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation regarding any securities, financial instruments, or advisory services in any jurisdiction. Investments in private credit involve substantial risk, including possible loss of principal, illiquidity, limited transparency, and complex tax considerations. Tropic Capital is not registered as an investment adviser with the U.S. Securities and Exchange Commission (SEC), nor as a securities portfolio manager (gestor de recursos) with the Comissão de Valores Mobiliários (CVM) in Brazil. All advisory services are provided exclusively to institutional investors, qualified investors (investidor qualificado), and accredited individuals as defined by applicable SEC and CVM regulations. Past performance is not indicative of future results. Forward-looking statements reflect current expectations and are subject to risks, uncertainties, and assumptions that may cause actual results to differ materially.
+          Tropic Capital is a private credit advisory firm. The information presented on this website is for informational purposes only and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation regarding any securities, financial instruments, or advisory services in any jurisdiction. Investments in private credit involve substantial risk, including possible loss of principal, illiquidity, limited transparency, and complex tax considerations.
         </div>
       </div>
     </footer>
@@ -1386,30 +1386,17 @@ function ContactPage() {
           </form>
         </div>
 
-        {/* DIRECT CONTACTS */}
+        {/* OFFICES */}
         <div>
-          <div style={{ ...mono, fontSize: 11, color: C.gold, letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: 18 }}>Direct contacts</div>
-          <h2 style={{ ...serif, fontSize: isMobile ? 30 : 40, fontWeight: 300, margin: 0, letterSpacing: "-0.02em" }}>Reach a partner.</h2>
-
-          <div style={{ marginTop: 36 }}>
-            {TEAM.map((p) => (
-              <div key={p.email} style={{ borderTop: `1px solid ${C.lineSoft}`, padding: "24px 0" }}>
-                <div style={{ ...serif, fontSize: 22, fontWeight: 400 }}>{p.name}</div>
-                <div style={{ ...mono, fontSize: 10, color: C.gold, letterSpacing: "0.18em", textTransform: "uppercase", marginTop: 6 }}>{p.role}</div>
-                <div style={{ fontSize: 13, color: C.textMute, marginTop: 6 }}>{p.loc}</div>
-                <a href={`mailto:${p.email}`} style={{ display: "inline-block", marginTop: 14, ...mono, fontSize: 12, color: C.text, letterSpacing: "0.1em", borderBottom: `1px solid ${C.gold}`, paddingBottom: 2 }}>{p.email}</a>
-              </div>
-            ))}
-            <div style={{ borderTop: `1px solid ${C.lineSoft}` }}/>
-          </div>
-
-          <div style={{ marginTop: 40, padding: 28, border: `1px solid ${C.line}`, background: "rgba(212,177,112,0.04)" }}>
-            <div style={{ ...mono, fontSize: 10, color: C.gold, letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: 14 }}>Offices</div>
-            <div style={{ ...serif, fontSize: 18, lineHeight: 1.5 }}>Orlando, Florida<br/><span style={{ color: C.textDim, fontSize: 14 }}>United States</span></div>
-            <div style={{ height: 1, background: C.lineSoft, margin: "20px 0" }}/>
-            <div style={{ ...serif, fontSize: 18, lineHeight: 1.5 }}>São Paulo<br/><span style={{ color: C.textDim, fontSize: 14 }}>Brazil</span></div>
-            <div style={{ height: 1, background: C.lineSoft, margin: "20px 0" }}/>
-            <a href="mailto:info@tropic-capital.com" style={{ ...mono, fontSize: 12, color: C.goldBright, letterSpacing: "0.16em" }}>info@tropic-capital.com</a>
+          <div style={{ padding: isMobile ? 24 : 32, border: `1px solid ${C.line}`, background: "rgba(212,177,112,0.04)" }}>
+            <div style={{ ...mono, fontSize: 10, color: C.gold, letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: 18 }}>Offices</div>
+            <div style={{ ...serif, fontSize: 20, lineHeight: 1.4, fontWeight: 400 }}>Orlando, Florida</div>
+            <div style={{ fontSize: 14, color: C.textDim, lineHeight: 1.6, marginTop: 8 }}>7345 W Sand Lake Rd<br/>Orlando, FL 32819<br/>United States</div>
+            <div style={{ height: 1, background: C.lineSoft, margin: "24px 0" }}/>
+            <div style={{ ...serif, fontSize: 20, lineHeight: 1.4, fontWeight: 400 }}>São Paulo</div>
+            <div style={{ fontSize: 14, color: C.textDim, lineHeight: 1.6, marginTop: 8 }}>Av. Brigadeiro Faria Lima, 1572<br/>São Paulo — SP, 01451-001<br/>Brazil</div>
+            <div style={{ height: 1, background: C.lineSoft, margin: "24px 0" }}/>
+            <a href="mailto:info@tropic-capital.com" style={{ ...mono, fontSize: 13, color: C.goldBright, letterSpacing: "0.14em", borderBottom: `1px solid ${C.gold}`, paddingBottom: 2 }}>info@tropic-capital.com</a>
           </div>
         </div>
       </div>
